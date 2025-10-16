@@ -1,0 +1,42 @@
+#1
+password=input()
+if len(password)<8:
+    print("Слишком короткий пароль")
+if len(password)>=8:
+    print("Пароль принят")
+
+#2
+status=input("Введите статус: ")
+if status=="online":
+    print("Связь установлена")
+else:
+    print("Связь потеряна")
+
+#3
+x=int(input("Введите число от 1-100: "))
+if 1<=x<=30:
+    print("Низкий уровень угрозы")
+elif 31<=x<=70:
+    print("Средний уровень угрозы")
+elif 71<=x<=100:
+    print("Критический уровень угрозы")
+else:
+    print("Ошибка ввода")
+
+#4
+checksum_original=input("Введите оригинальный контрольный чек: ")
+checksum_current=input("Введите текущий контрольный чек: ")
+status="Файл не изменён" if checksum_original==checksum_current else "Файл повреждён"
+print(status)
+
+#5
+event_code=input("Введите код события (ERR, WRN, INF): ")
+match event_code:
+    case "ERR":
+        print("Ошибка системы")
+    case "WRN":
+        print("Предупреждение")
+    case "INF":
+        print("Информационное сообщение")
+    case _:
+        print("Неизвестный код события")
